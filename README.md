@@ -20,6 +20,7 @@ CREATE TABLE users (
 );
 
 En créer une autre nommée posts et entrer le code ci-dessous : 
+
 CREATE TABLE posts (
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT NOT NULL,
