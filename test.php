@@ -1,5 +1,4 @@
-<?php include 'header.php'; ?>
-
+<?php
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,14 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-<main>
-
-
-</main>
+    
 </body>
-
-<?php include 'footer.php'; ?>
-
 </html>
-
-
