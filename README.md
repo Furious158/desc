@@ -7,7 +7,7 @@ Suivez les étapes ci-dessous pour configurer et exécuter le projet sur votre m
 Le projet est conçu pour automatiser l'installation de la base de données. Une fois les services Apache et MySQL démarrés, l'application s'occupe de créer la base de données et les tables nécessaires.
 
 1. Assurez-vous que **XAMPP** est installé et que les services **Apache** et **MySQL** sont démarrés.
-2. Rendez-vous sur [http://localhost:8080/desc/index.php](http://localhost:8080/desc/index.php).
+2. Rendez-vous sur [http://localhost:8080/desc/install_page.php](http://localhost:8080/desc/install_page.php).
 3. L'application initialisera automatiquement la base de données si elle ne trouve pas les tables nécessaires.
 
 ---
@@ -67,6 +67,8 @@ CREATE TABLE posts (
 ---
 
 ### **_Étape 5 : Accéder au projet_**
+
+Une fois les étapes précédentes terminées, rendez-vous sur http://localhost:8080/desc/index.php pour voir et interagir avec votre projet sur votre serveur local.
 
 ---
 
