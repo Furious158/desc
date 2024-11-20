@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../assets/css/main.css">
     <link rel="stylesheet" href="../assets/css/components.css">
     <link rel="stylesheet" href="../assets/css/responsive.css">
+    <link rel="stylesheet" href="../assets/css/offer_service.css">
 
     <title>Document</title>
 </head>
@@ -18,7 +19,7 @@
         <main>
             <section class="category-selection">
                 <h2>Choisissez une catégorie</h2>
-                <form action="categorie_details.php" method="POST">
+                <form action="../views/categorie_details.php" method="POST">
                     <div class="form-group">
                         <label for="categorie">Catégorie :</label>
                         <select id="categorie" name="categorie" required>

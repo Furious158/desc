@@ -1,12 +1,10 @@
-/* main.css */
+/* main.css - pour les styles généraux de la page */
 
-/* Styling global */
 body {
+    background-color: #f4f4f4; /* Couleur de fond légère */
+    color: #333; /* Texte foncé pour une meilleure lisibilité */
     font-family: 'Roboto', sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    margin: 0;
-    padding: 0;
+    padding: 20px;
 }
 
 header {
@@ -19,8 +17,8 @@ header {
 footer {
     background-color: #222;
     color: white;
-    padding: 10px 0;
     text-align: center;
+    padding: 10px 0;
     margin-top: 30px;
 }
 
@@ -28,115 +26,46 @@ h1, h2, h3 {
     color: #333;
 }
 
-/* Introduction section */
-.introduction {
-    background-color: #e9f5ff;
-    padding: 20px;
-    text-align: center;
-    margin-top: 20px;
-}
-
-.introduction h2 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-}
-
-.introduction p {
-    font-size: 1rem;
-    color: #555;
-}
-
-/* Actions section */
-.actions {
-    padding: 30px;
-    text-align: center;
-}
-
-.actions h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-}
-
-.buttons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.buttons .btn {
+button {
     background-color: #007BFF;
     color: white;
-    padding: 12px 25px;
-    text-decoration: none;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
     border-radius: 5px;
-    font-size: 1rem;
-    transition: background-color 0.3s;
+    font-size: 16px;
 }
 
-.buttons .btn:hover {
+button:hover {
     background-color: #0056b3;
 }
 
-/* Posts section */
-.posts {
-    padding: 30px 20px;
-}
-
-.posts h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-}
-
-.post-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
-}
-
-.post {
+/* Formulaires */
+form {
     background-color: white;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    max-width: 600px;
+    margin: auto;
 }
 
-.post:hover {
-    transform: scale(1.05);
+input, textarea, select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
-.post-header {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+input[type="number"] {
+    max-width: 150px;
 }
 
-.profile-picture {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    object-fit: cover;
+textarea {
+    height: 150px;
 }
 
-.post-details p {
-    font-size: 1rem;
-    margin: 5px 0;
-}
-
-.post-date {
-    font-size: 0.9rem;
-    color: #888;
-    margin-top: 15px;
-}
-
-/* Mobile responsiveness */
-@media (max-width: 768px) {
-    .buttons {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .post-list {
-        grid-template-columns: 1fr;
-    }
+label {
+    font-weight: bold;
 }

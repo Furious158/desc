@@ -1,0 +1,54 @@
+/* Style général pour la section de sélection de catégorie */
+.category-selection {
+    background-color: #f9f9f9; /* Fond légèrement gris */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Ombre légère autour de la section */
+    margin-top: 20px;
+}
+
+.category-selection h2 {
+    color: #007BFF; /* Couleur bleue pour le titre */
+    font-size: 1.8em;
+    margin-bottom: 15px;
+}
+
+.category-selection .form-group {
+    margin-bottom: 20px;
+}
+
+.category-selection label {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #333; /* Couleur du texte du label */
+}
+
+.category-selection select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd; /* Bordure douce */
+    border-radius: 5px;
+    font-size: 1em;
+    color: #555; /* Couleur du texte */
+    background-color: #fff;
+    transition: border-color 0.3s ease; /* Transition pour la bordure lors du focus */
+}
+
+.category-selection select:focus {
+    border-color: #007BFF; /* Bordure bleue lors du focus */
+}
+
+.category-selection .btn-submit {
+    background-color: #28a745; /* Vert pour le bouton */
+    color: white;
+    padding: 12px 20px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.category-selection .btn-submit:hover {
+    background-color: #218838; /* Effet de survol sur le bouton */
+}

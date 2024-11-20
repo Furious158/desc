@@ -28,6 +28,7 @@ session_start();
         <?php endif; ?>
 
         <a href="../index.php" class="home-icon" title="Home"><i class="fa-solid fa-house"></i></a>
+
     </header>
 </body>
 

@@ -1,2 +1,3 @@
 Ajouter la gestion quand l'email ou le mot de passe est incorecte sur la page en rouge.
 Ajouter la possibilité de modifier un post deja créer si on est autheur de se post et la suppression des post.
+Regler pb css et redirection vers l'index.
