@@ -1,0 +1,30 @@
+/* components.css - pour les styles réutilisables */
+
+.card {
+    background-color: white;
+    padding: 20px;
+    margin: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+.card h3 {
+    color: #007BFF;
+}
+
+.card p {
+    color: #555;
+}
+
+.card .button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.card .button:hover {
+    background-color: #218838;
+}

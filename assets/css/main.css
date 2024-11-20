@@ -1,0 +1,142 @@
+/* main.css */
+
+/* Styling global */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #007BFF;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer {
+    background-color: #222;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    margin-top: 30px;
+}
+
+h1, h2, h3 {
+    color: #333;
+}
+
+/* Introduction section */
+.introduction {
+    background-color: #e9f5ff;
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.introduction h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.introduction p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Actions section */
+.actions {
+    padding: 30px;
+    text-align: center;
+}
+
+.actions h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.buttons .btn {
+    background-color: #007BFF;
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.buttons .btn:hover {
+    background-color: #0056b3;
+}
+
+/* Posts section */
+.posts {
+    padding: 30px 20px;
+}
+
+.posts h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.post-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.post {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.post:hover {
+    transform: scale(1.05);
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.profile-picture {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.post-details p {
+    font-size: 1rem;
+    margin: 5px 0;
+}
+
+.post-date {
+    font-size: 0.9rem;
+    color: #888;
+    margin-top: 15px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .post-list {
+        grid-template-columns: 1fr;
+    }
+}

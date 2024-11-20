@@ -1,0 +1,7 @@
+<FilesMatch "\.(php|phtml|php3|php4|php5|phps|shtml|asp|jsp|cgi|pl)$">
+    Deny from all
+</FilesMatch>
+
+<Files "*">
+    Require all granted
+</Files>

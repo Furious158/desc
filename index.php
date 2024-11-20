@@ -1,6 +1,6 @@
-<?php include 'header.php'; ?>
+<?php include 'includes/header.php'; ?>
 <?php
-require 'db.php'; // Inclure la connexion à la base de données
+require 'php/db.php'; // Inclure la connexion à la base de données
 
 // Récupérer tous les posts
 try {
@@ -18,18 +18,33 @@ try {
 ?>
 
 
+<!DOCTYPE html>
+<html lang="fr">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plateforme d'échange de services</title>
+
+    <!-- Lier le fichier CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+
+
+</head>
 <main>
     <section class="introduction">
         <h2>Facilitez vos échanges de services</h2>
-        <p>Cette plateforme vous permet de proposer des services (comme l'aide aux devoirs, le prêt de matériel, etc.) ou de demander des services dont vous avez besoin.</p>
+        <p>Cette plateforme vous permet de proposer des services (comme l'aide aux devoirs, le prêt de matériel, etc.)
+            ou de demander des services dont vous avez besoin.</p>
     </section>
 
     <section class="actions">
         <h2>Commencez maintenant</h2>
         <div class="buttons">
-            <a href="offer_service.php" class="btn">Offer a service</a>
-            <a href="find_service.php" class="btn">Find a service</a>
+            <a href="controllers/offer_service.php" class="btn">Offer a service</a>
+            <a href="controllers/find_service.php" class="btn">Find a service</a>
         </div>
     </section>
 
@@ -41,7 +56,8 @@ try {
                     <article class="post">
                         <div class="post-header">
                             <!-- Affichage du nom de l'utilisateur et de sa photo -->
-                            <img src="<?php echo htmlspecialchars($post['profile_picture'] ?? 'default-avatar.png'); ?>" alt="Photo de profil" class="profile-picture">
+                            <img src="<?php echo htmlspecialchars($post['profile_picture'] ?? 'default-avatar.png'); ?>"
+                                alt="Photo de profil" class="profile-picture">
                             <h3><?php echo htmlspecialchars($post['username']); ?></h3>
                         </div>
                         <div class="post-details">
@@ -66,7 +82,8 @@ try {
 </main>
 
 
-<?php include 'footer.php'; ?>
+<?php include 'includes/footer.php'; ?>
 
 </body>
+
 </html>
