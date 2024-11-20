@@ -64,8 +64,6 @@ CREATE TABLE posts (
 
 2. Cliquez sur **_Exécuter_** pour créer la table.
 
----
-
 ### **_Étape 5 : Accéder au projet_**
 
 Une fois les étapes précédentes terminées, rendez-vous sur http://localhost:8080/desc/index.php pour voir et interagir avec votre projet sur votre serveur local.
