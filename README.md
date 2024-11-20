@@ -1,32 +1,32 @@
 # **_Configuration et exécution du projet_**
 
-Suivez les étapes ci-dessous pour configurer le projet sur votre machine locale.
+Suivez les étapes ci-dessous pour configurer et exécuter le projet sur votre machine locale.
 
-## **_Prérequis_**
+## **_Installation automatique de la base de données_**
 
-Avant de commencer, assurez-vous que vous avez installé [XAMPP](https://www.apachefriends.org/fr/index.html).
+Le projet est conçu pour automatiser l'installation de la base de données. Une fois les services Apache et MySQL démarrés, l'application s'occupe de créer la base de données et les tables nécessaires.
 
-### **_Étape 1 : Télécharger et installer XAMPP_**
+1. Assurez-vous que **XAMPP** est installé et que les services **Apache** et **MySQL** sont démarrés.
+2. Rendez-vous sur [http://localhost:8080/desc/index.php](http://localhost:8080/desc/index.php).
+3. L'application initialisera automatiquement la base de données si elle ne trouve pas les tables nécessaires.
 
-1. Téléchargez XAMPP depuis le site officiel : [Télécharger XAMPP](https://www.apachefriends.org/fr/index.html).
-2. Installez XAMPP sur votre machine en suivant les instructions d'installation.
+---
 
-### **_Étape 2 : Démarrer les services Apache et MySQL_**
+### **_Instructions manuelles (si l'installation automatique échoue)_**
 
-1. Ouvrez le **XAMPP Control Panel**.
-2. Cliquez sur **Start** pour démarrer les services **Apache** et **MySQL**. Cela permettra d'exécuter votre serveur local et de gérer la base de données.
+Si, pour une raison quelconque, l'installation automatique ne fonctionne pas, vous pouvez suivre ces étapes pour configurer manuellement la base de données.
 
-### **_Étape 3 : Accéder à phpMyAdmin_**
+### **_Étape 1 : Accéder à phpMyAdmin_**
 
 1. Ouvrez votre navigateur et allez sur [http://localhost:8080/phpmyadmin](http://localhost:8080/phpmyadmin).
 2. Vous serez redirigé vers l'interface de gestion de la base de données MySQL, phpMyAdmin.
 
-### **_Étape 4 : Créer une base de données_**
+### **_Étape 2 : Créer une base de données_**
 
 1. Dans phpMyAdmin, cliquez sur l'onglet **Bases de données**.
 2. Créez une nouvelle base de données en l'appelant `desc_bdd` (sans les guillemets).
 
-### **_Étape 5 : Créer la table `users`_**
+### **_Étape 3 : Créer la table `users`_**
 
 1. Dans phpMyAdmin, sélectionnez la base de données `desc_bdd`.
 2. Allez dans l'onglet **SQL** et entrez le code suivant pour créer la table `users` :
@@ -40,14 +40,13 @@ CREATE TABLE users (
     profile_picture VARCHAR(255) DEFAULT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-
 ```
 
-3. Cliquez sur **Exécuter** pour créer la table `posts`
+3. Cliquez sur **_Exécuter_** pour créer la table.
 
-### **_Étape 6 : Créer la table `posts`_**
+### **_Étape 4 : Créer la table posts_**
 
-1. Toujours dans phpMyAdmin, dans la base de données `desc_bdd`, allez à l'onglet **SQL** et entrez le code suivant pour créer la table `posts` :
+1. Toujours dans phpMyAdmin, dans la base de données desc_bdd, allez à l'onglet SQL et entrez le code suivant pour créer la table posts :
 
 ```sql
 CREATE TABLE posts (
@@ -61,11 +60,20 @@ CREATE TABLE posts (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 );
-
 ```
 
-2. Cliquez sur **Exécuter** pour créer la table `posts`
+2. Cliquez sur **_Exécuter_** pour créer la table.
 
-### **_Étape 7 : Accéder au projet_**
+---
 
-Une fois les étapes précédentes terminées, rendez-vous sur http://localhost:8080/desc/index.php pour voir et interagir avec votre projet sur votre serveur local.
+### **_Étape 5 : Accéder au projet_**
+
+---
+
+# **_Remarques_**
+
+- **_Automatisation réussie_** : Si l'installation automatique fonctionne, vous n'avez pas besoin de suivre les étapes manuelles.
+
+- **_Vérification de l'environnement_** : Si vous rencontrez des problèmes, vérifiez que les services Apache et MySQL sont actifs.
+
+- **_Support_** : Si vous continuez à rencontrer des problèmes, consultez les logs d'erreur de MySQL et d'Apache ou contactez le support du projet.
