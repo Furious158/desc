@@ -4,32 +4,32 @@ Suivez les étapes ci-dessous pour configurer et exécuter le projet sur votre m
 
 ## **_Installation automatique de la base de données_**
 
-Le projet est conçu pour automatiser l'installation de la base de données. Une fois les services Apache et MySQL démarrés, l'application s'occupe de créer la base de données et les tables nécessaires.
+Le projet est conçu pour **automatiser l'installation de la base de données**. Une fois les services **Apache** et **MySQL** démarrés, l'application s'occupe de **créer la base de données** et les tables nécessaires.
 
 1. Assurez-vous que **XAMPP** est installé et que les services **Apache** et **MySQL** sont démarrés.
 2. Rendez-vous sur [http://localhost:8080/desc/install_page.php](http://localhost:8080/desc/install_page.php).
-3. L'application initialisera automatiquement la base de données si elle ne trouve pas les tables nécessaires.
+3. L'application initialisera automatiquement la **base de données** si elle ne trouve pas les tables nécessaires.
 
 ---
 
 ### **_Instructions manuelles (si l'installation automatique échoue)_**
 
-Si, pour une raison quelconque, l'installation automatique ne fonctionne pas, vous pouvez suivre ces étapes pour configurer manuellement la base de données.
+Si, pour une raison quelconque, **l'installation automatique ne fonctionne pas**, vous pouvez suivre ces étapes pour configurer manuellement la base de données.
 
 ### **_Étape 1 : Accéder à phpMyAdmin_**
 
-1. Ouvrez votre navigateur et allez sur [http://localhost:8080/phpmyadmin](http://localhost:8080/phpmyadmin).
-2. Vous serez redirigé vers l'interface de gestion de la base de données MySQL, phpMyAdmin.
+1. Ouvrez votre navigateur et allez sur **[http://localhost:8080/phpmyadmin](http://localhost:8080/phpmyadmin)**.
+2. Vous serez redirigé vers l'interface de gestion de la base de données **MySQL**, **phpMyAdmin**.
 
 ### **_Étape 2 : Créer une base de données_**
 
-1. Dans phpMyAdmin, cliquez sur l'onglet **Bases de données**.
-2. Créez une nouvelle base de données en l'appelant `desc_bdd` (sans les guillemets).
+1. Dans **phpMyAdmin**, cliquez sur l'onglet **Bases de données**.
+2. Créez une nouvelle base de données en l'appelant **`desc_bdd`** (sans les guillemets).
 
 ### **_Étape 3 : Créer la table `users`_**
 
-1. Dans phpMyAdmin, sélectionnez la base de données `desc_bdd`.
-2. Allez dans l'onglet **SQL** et entrez le code suivant pour créer la table `users` :
+1. Dans **phpMyAdmin**, sélectionnez la base de données **`desc_bdd`**.
+2. Allez dans l'onglet **SQL** et entrez le code suivant pour créer la table **`users`** :
 
 ```sql
 CREATE TABLE users (
@@ -42,11 +42,11 @@ CREATE TABLE users (
 );
 ```
 
-3. Cliquez sur **_Exécuter_** pour créer la table.
+3. Cliquez sur **Exécuter** pour créer la table `users`.
 
-### **_Étape 4 : Créer la table posts_**
+### **_Étape 4 : Créer la table `posts`_**
 
-1. Toujours dans phpMyAdmin, dans la base de données desc_bdd, allez à l'onglet SQL et entrez le code suivant pour créer la table posts :
+1. Toujours dans **phpMyAdmin**, dans la base de données **`desc_bdd`**, allez à l'onglet **SQL** et entrez le code suivant pour créer la table **`posts`** :
 
 ```sql
 CREATE TABLE posts (
@@ -62,18 +62,16 @@ CREATE TABLE posts (
 );
 ```
 
-2. Cliquez sur **_Exécuter_** pour créer la table.
+2. Cliquez sur **Exécuter** pour créer la table **posts**.
 
 ### **_Étape 5 : Accéder au projet_**
 
-Une fois les étapes précédentes terminées, rendez-vous sur http://localhost:8080/desc/index.php pour voir et interagir avec votre projet sur votre serveur local.
+Une fois les étapes précédentes terminées, rendez-vous sur **[http://localhost:8080/desc/index.php](http://localhost:8080/desc/index.php)** pour voir et interagir avec votre projet sur votre serveur local.
 
 ---
 
-# **_Remarques_**
+## **_Remarques_**
 
-- **_Automatisation réussie_** : Si l'installation automatique fonctionne, vous n'avez pas besoin de suivre les étapes manuelles.
-
-- **_Vérification de l'environnement_** : Si vous rencontrez des problèmes, vérifiez que les services Apache et MySQL sont actifs.
-
-- **_Support_** : Si vous continuez à rencontrer des problèmes, consultez les logs d'erreur de MySQL et d'Apache ou contactez le support du projet.
+- **Automatisation réussie** : Si **l'installation automatique fonctionne**, vous n'avez pas besoin de suivre les étapes manuelles.
+- **Vérification de l'environnement** : Si vous rencontrez des problèmes, vérifiez que les services **Apache** et **MySQL** sont actifs.
+- **Support** : Si vous continuez à rencontrer des problèmes, consultez les logs d'erreur de **MySQL** et d'**Apache** ou contactez le support du projet.
