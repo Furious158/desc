@@ -31,8 +31,7 @@ Avant de commencer, assurez-vous que vous avez installé [XAMPP](https://www.apa
 1. Dans phpMyAdmin, sélectionnez la base de données `desc_bdd`.
 2. Allez dans l'onglet **SQL** et entrez le code suivant pour créer la table `users` :
 
-```
-sql
+```sql
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(50) NOT NULL UNIQUE,
@@ -45,8 +44,7 @@ CREATE TABLE users (
 
 En créer une autre nommée posts et entrer le code ci-dessous :
 
-```
-sql
+```sql
 CREATE TABLE posts (
 
     id INT AUTO_INCREMENT PRIMARY KEY,
