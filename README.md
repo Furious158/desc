@@ -43,32 +43,29 @@ CREATE TABLE users (
 
 ```
 
-En créer une autre nommée posts et entrer le code ci-dessous :
+3. Cliquez sur **Exécuter** pour créer la table `posts`
+
+### **_Étape 6 : Créer la table `posts`_**
+
+1. Toujours dans phpMyAdmin, dans la base de données `desc_bdd`, allez à l'onglet **SQL** et entrez le code suivant pour créer la table `posts` :
 
 ```sql
 CREATE TABLE posts (
-
     id INT AUTO_INCREMENT PRIMARY KEY,
-
     user_id INT NOT NULL,
-
     type ENUM('demande', 'offre') NOT NULL,
-
     category VARCHAR(255) NOT NULL,
-
     details TEXT NOT NULL,
-
     disponibilites TEXT,
-
     prix_par_heure DECIMAL(10, 2),
-
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
-
 );
+
 ```
 
-## Étape 6 :
+2. Cliquez sur **Exécuter** pour créer la table `posts`
 
-Rendez-vous sur http://localhost:8080/desc/index.php.
+### **_Étape 7 : Accéder au projet_**
+
+Une fois les étapes précédentes terminées, rendez-vous sur http://localhost:8080/desc/index.php pour voir et interagir avec votre projet sur votre serveur local.
