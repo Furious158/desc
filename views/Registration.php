@@ -1,4 +1,4 @@
-<?php include 'includes/header.php'; ?>
+<?php include '../includes/header.php'; ?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -7,7 +7,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inscription</title>
-    <link rel="stylesheet" href="style.css"> <!-- Assure-toi que le chemin vers le CSS est correct -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/components.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
 </head>
 
 <body>
@@ -38,4 +40,4 @@
 
 </html>
 
-<?php include 'includes/footer.php'; ?>
+<?php include '../includes/footer.php'; ?>

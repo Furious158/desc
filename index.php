@@ -27,7 +27,7 @@ try {
     <title>Plateforme d'échange de services</title>
 
     <!-- Lier le fichier CSS -->
-    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/components.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
 
