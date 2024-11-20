@@ -1,32 +1,32 @@
-# Configuration et exécution du projet
+# **_Configuration et exécution du projet_**
 
 Suivez les étapes ci-dessous pour configurer le projet sur votre machine locale.
 
-## Prérequis
+## **_Prérequis_**
 
 Avant de commencer, assurez-vous que vous avez installé [XAMPP](https://www.apachefriends.org/fr/index.html).
 
-### Étape 1 : Télécharger et installer XAMPP
+### **_Étape 1 : Télécharger et installer XAMPP_**
 
 1. Téléchargez XAMPP depuis le site officiel : [Télécharger XAMPP](https://www.apachefriends.org/fr/index.html).
 2. Installez XAMPP sur votre machine en suivant les instructions d'installation.
 
-### Étape 2 : Démarrer les services Apache et MySQL
+### **_Étape 2 : Démarrer les services Apache et MySQL_**
 
 1. Ouvrez le **XAMPP Control Panel**.
 2. Cliquez sur **Start** pour démarrer les services **Apache** et **MySQL**. Cela permettra d'exécuter votre serveur local et de gérer la base de données.
 
-### Étape 3 : Accéder à phpMyAdmin
+### **_Étape 3 : Accéder à phpMyAdmin_**
 
 1. Ouvrez votre navigateur et allez sur [http://localhost:8080/phpmyadmin](http://localhost:8080/phpmyadmin).
 2. Vous serez redirigé vers l'interface de gestion de la base de données MySQL, phpMyAdmin.
 
-### Étape 4 : Créer une base de données
+### **_Étape 4 : Créer une base de données_**
 
 1. Dans phpMyAdmin, cliquez sur l'onglet **Bases de données**.
 2. Créez une nouvelle base de données en l'appelant `desc_bdd` (sans les guillemets).
 
-### Étape 5 : Créer la table `users`
+### **_Étape 5 : Créer la table `users`_**
 
 1. Dans phpMyAdmin, sélectionnez la base de données `desc_bdd`.
 2. Allez dans l'onglet **SQL** et entrez le code suivant pour créer la table `users` :
@@ -40,6 +40,7 @@ CREATE TABLE users (
     profile_picture VARCHAR(255) DEFAULT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
 ```
 
 En créer une autre nommée posts et entrer le code ci-dessous :
