@@ -1,12 +1,10 @@
-Ajouter la gestion quand l'email ou le mot de passe est incorecte sur la page en rouge.
-Ajouter la possibilité de modifier un post deja créer si on est auteur de se post et la suppression des post.
-                   
-                   
-                         
-                         --------------------------------------------------
++- Ajouter la gestion quand l'email ou le mot de passe est incorecte sur la page en rouge.
+- Ajouter la possibilité de modifier un post deja créer si on est autheur de se post et la suppression des post.
++ Ne pas pouvoir créer de post si on a pas de compte.
 
-                                          Mathis
 
-Revoir le css (couleur, bouton, encadrement poste, barre de recherche, login, etc)
-Revoir le fonctionnement de la page de login et de la page de création de compte
-Réorganiser les dossiers et les redirections
+++Un utilisateur non connecter ne peux pas :
+Acceder au pages offer_service et find_service ni via les buttons ni via l'url
+Ne peux pas "acheter" d'offre ou "faire une demande" ou "proposer un service".
+
+
