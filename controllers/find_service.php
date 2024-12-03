@@ -37,6 +37,18 @@
                         value="<?php echo htmlspecialchars($_GET['location'] ?? ''); ?>">
                 </div>
 
+                <div class="form-group">
+                    <label for="min_price">Prix minimum :</label>
+                    <input type="number" id="min_price" name="min_price" placeholder="Prix minimum" step="0.01"
+                        value="<?php echo htmlspecialchars($_GET['min_price'] ?? ''); ?>">
+                </div>
+
+                <div class="form-group">
+                    <label for="max_price">Prix maximum :</label>
+                    <input type="number" id="max_price" name="max_price" placeholder="Prix maximum" step="0.01"
+                        value="<?php echo htmlspecialchars($_GET['max_price'] ?? ''); ?>">
+                </div>
+
                 <button type="submit" class="btn-submit">Rechercher</button>
             </form>
         </section>
@@ -48,6 +60,8 @@
             // Vérifier si le formulaire a été soumis
             $category = $_GET['category'] ?? '';
             $location = $_GET['location'] ?? '';
+            $min_price = $_GET['min_price'] ?? '';
+            $max_price = $_GET['max_price'] ?? '';
 
             // Préparer la requête SQL avec des filtres
             $sql = "SELECT * FROM posts WHERE 1=1";
@@ -58,6 +72,14 @@
 
             if ($location) {
                 $sql .= " AND details LIKE :location"; // Rechercher dans les détails
+            }
+
+            if ($min_price !== '') {
+                $sql .= " AND price >= :min_price";
+            }
+
+            if ($max_price !== '') {
+                $sql .= " AND price <= :max_price";
             }
 
             try {
@@ -71,6 +93,14 @@
                     $stmt->bindParam(':location', $location, PDO::PARAM_STR);
                 }
 
+                if ($min_price !== '') {
+                    $stmt->bindParam(':min_price', $min_price, PDO::PARAM_STR);
+                }
+
+                if ($max_price !== '') {
+                    $stmt->bindParam(':max_price', $max_price, PDO::PARAM_STR);
+                }
+
                 $stmt->execute();
                 $posts = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -80,6 +110,7 @@
                         <div class="card">
                             <h3><?php echo htmlspecialchars($post['category']); ?></h3>
                             <p><?php echo htmlspecialchars($post['details']); ?></p>
+                            <p>Prix : <?php echo htmlspecialchars($post['price']); ?> €</p>
                             <button class="button">Demander ce service</button>
                         </div>
                         <?php

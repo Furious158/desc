@@ -1,6 +1,5 @@
 <?php
-require 'db.php'; // Connexion à la base de données
-
+require '../php/db.php'; // Connexion à la base de données
 session_start();
 
 if (isset($_POST['submit'])) {
@@ -17,6 +16,7 @@ if (isset($_POST['submit'])) {
     ");
     $stmt->execute([$user_id, $type, $category, $details, $disponibilites, $prix_par_heure]);
 
+    // Redirection vers la page d'accueil ou une page de confirmation
     header('Location: index.php'); // Redirige vers la page d'accueil
     exit;
 }

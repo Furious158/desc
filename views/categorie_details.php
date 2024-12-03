@@ -1,3 +1,14 @@
+<?php
+// Vérifiez si la catégorie a été envoyée depuis la page précédente
+if (!isset($_POST['categorie'])) {
+    echo "<p>Erreur : aucune catégorie sélectionnée.</p>";
+    exit;
+}
+
+// Récupérer la catégorie sélectionnée
+$categorie = htmlspecialchars($_POST['categorie']);
+?>
+
 <?php include '../includes/header.php'; ?>
 
 <!DOCTYPE html>
@@ -14,17 +25,6 @@
 
 <body>
     <main>
-        <?php
-        // Vérifiez que la catégorie a été transmise depuis la page précédente
-        if (!isset($_POST['categorie'])) {
-            echo "<p>Erreur : aucune catégorie sélectionnée.</p>";
-            exit;
-        }
-
-        // Récupérez la catégorie sélectionnée
-        $categorie = htmlspecialchars($_POST['categorie']);
-        ?>
-
         <h2>Publier une annonce pour la catégorie : <?php echo $categorie; ?></h2>
         <form action="create_post.php" method="POST">
             <!-- Champ caché pour transmettre la catégorie -->
@@ -56,6 +56,7 @@
             <button type="submit" name="submit" class="btn-submit">Publier</button>
         </form>
     </main>
+
     <?php include '../includes/footer.php'; ?>
 </body>
 
