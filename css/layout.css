@@ -1,0 +1,101 @@
+/* En-tête */
+header {
+    background-color: #f4a300; /* Orange vif pour l'entête */
+    color: white;
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2em;
+}
+
+/* Section d'introduction */
+.introduction {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.introduction h2 {
+    font-size: 2em;
+    color: #e87a00; /* Orange foncé pour attirer l'attention */
+    margin-bottom: 20px;
+}
+
+.introduction p {
+    font-size: 1.2em;
+    color: #555;
+}
+
+/* Section des actions principales */
+.actions {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.actions h2 {
+    font-size: 2em;
+    color: #e87a00; /* Orange foncé pour les actions */
+    margin-bottom: 20px;
+}
+
+.actions .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.actions .btn {
+    background-color: #f4a300; /* Orange doré pour les boutons */
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.1em;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.actions .btn:hover {
+    background-color: #e87a00; /* Orange foncé au survol */
+}
+
+/* Section des posts */
+.posts {
+    margin-top: 40px;
+}
+
+.posts h2 {
+    font-size: 2em;
+    color: #f4a300; /* Orange pour uniformiser l'aspect */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.post-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Bouton Home */
+.home-icon {
+    background-color: #333; /* Gris foncé */
+    color: white;
+    padding: 8px 12px; /* Réduction de la taille */
+    font-size: 1.2em; /* Réduction de la taille du texte */
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.home-icon:hover {
+    background-color: #555; /* Gris plus clair au survol */
+    transform: scale(1.05); /* Effet de zoom léger */
+}
+

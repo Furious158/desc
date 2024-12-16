@@ -67,6 +67,17 @@ $stmt->execute();
 $services = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
+<head>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/forms.css">
+    <link rel="stylesheet" href="css/cards.css">
+    <link rel="stylesheet" href="css/profile.css">
+</head>
+
 <main>
     <h1>Résultats de la recherche</h1>
 

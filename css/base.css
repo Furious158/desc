@@ -1,0 +1,24 @@
+/* Police de base et couleurs générales */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #fff7e6; /* Crème clair pour un fond doux et chaleureux */
+    color: #333; /* Texte en gris foncé pour la lisibilité */
+    line-height: 1.6;
+    padding: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: #f4a300; /* Orange doré pour les liens */
+}
+
+a:hover {
+    color: #e87a00; /* Un orange plus foncé au survol */
+}
+
+/* Conteneur principal */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}

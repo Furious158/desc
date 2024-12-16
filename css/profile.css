@@ -1,0 +1,39 @@
+/* Profil utilisateur */
+.profile {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.profile .profile-info {
+    flex: 2;
+}
+
+.profile .profile-info h3 {
+    font-size: 2em;
+    color: #f4a300; /* Utilisation de l'orange vif pour le titre */
+}
+
+.profile .profile-info p {
+    font-size: 1.2em;
+    color: #555; /* Gris foncé pour le texte */
+}
+
+.profile .profile-actions {
+    flex: 1;
+    text-align: right;
+}
+
+.profile .profile-actions button {
+    background-color: #f4a300; /* Orange vif pour les boutons */
+    color: white;
+    padding: 12px 20px;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.profile .profile-actions button:hover {
+    background-color: #e87a00; /* Orange plus foncé au survol */
+}

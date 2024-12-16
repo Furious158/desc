@@ -1,0 +1,88 @@
+/* Style pour la page de connexion (cartes) */
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    gap: 40px;
+}
+
+.form-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.form-card h1 {
+    font-size: 1.8em;
+    color: #f4a300; /* Orange vif pour le titre */
+    margin-bottom: 20px;
+}
+
+.form-card label {
+    display: block;
+    font-size: 1.1em;
+    margin: 10px 0 5px;
+    text-align: left;
+}
+
+.form-card input {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.form-card .button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1em;
+    background-color: #f4a300; /* Orange pour l'inscription */
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.form-card .button:hover {
+    background-color: #e87a00; /* Orange foncé au survol */
+}
+
+.form-card p {
+    font-size: 1em;
+    color: #555;
+    margin-top: 10px;
+}
+
+.form-card p a {
+    color: #f4a300; /* Orange pour les liens */
+    text-decoration: none;
+}
+
+.form-card p a:hover {
+    text-decoration: underline;
+}
+
+/* Alert message */
+.alert {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #f5c6cb;
+    border-radius: 5px;
+    text-align: center;
+}

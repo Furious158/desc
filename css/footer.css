@@ -1,0 +1,22 @@
+/* Footer */
+footer {
+    background-color: #8e2a2f; /* Bordeaux profond pour le pied de page */
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    border-radius: 8px;
+}
+
+footer p {
+    font-size: 1.1em;
+}
+
+footer a {
+    color: #f4a300; /* Orange pour les liens */
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
