@@ -453,3 +453,44 @@ textarea::placeholder {
 .post-details {
     margin-bottom: 40px; /* Ajout d'espace pour éviter le chevauchement avec le bouton */
 }
+
+.post-actions {
+    margin-top: 10px;
+}
+
+.btn-edit {
+    background-color: #f0ad4e;
+    color: #fff;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn-delete {
+    background-color: #d9534f;
+    color: #fff;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn-edit:hover, .btn-delete:hover {
+    opacity: 0.9;
+}
+/* Style pour les messages d'erreur et de succès */
+.alert {
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 5px;
+    color: white;
+}
+
+.alert-danger {
+    background-color: #f44336; /* Rouge */
+    border: 1px solid #e57373;
+}
+
+.alert-success {
+    background-color: #4CAF50; /* Vert */
+    border: 1px solid #81C784;
+}

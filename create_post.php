@@ -9,13 +9,13 @@ if (isset($_POST['submit'])) {
     $category = $_POST['category']; // Catégorie sélectionnée
     $details = $_POST['details']; // Détails du post
     $disponibilites = $_POST['disponibilites'] ?? null; // Disponibilités (optionnel)
-    $prix_par_heure = $_POST['prix_par_heure'] ?? null; // Prix (optionnel pour les offres)
+    $points_requis = $_POST['points_requis'] ?? 0;
 
     $stmt = $pdo->prepare("
-        INSERT INTO posts (user_id, type, category, details, disponibilites, prix_par_heure)
+        INSERT INTO posts (user_id, type, category, details, disponibilites, points_requis)
         VALUES (?, ?, ?, ?, ?, ?)
     ");
-    $stmt->execute([$user_id, $type, $category, $details, $disponibilites, $prix_par_heure]);
+    $stmt->execute([$user_id, $type, $category, $details, $disponibilites, $points_requis]);
 
     header('Location: index.php'); // Redirige vers la page d'accueil
     exit;

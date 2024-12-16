@@ -1,7 +1,7 @@
-+- Ajouter la gestion quand l'email ou le mot de passe est incorecte sur la page en rouge.
-- Ajouter la possibilité de modifier un post deja créer si on est autheur de se post et la suppression des post.
-+ Ne pas pouvoir créer de post si on a pas de compte.
-- Ajouter le systeme de point et retirer les prix
++- Ajouter la gestion quand l'email ou le mot de passe est incorecte sur la page en rouge. Fait
+- Ajouter la possibilité de modifier un post deja créer si on est autheur de se post et la suppression des post. Fait 
++ Ne pas pouvoir créer de post si on a pas de compte. Fait
+- Ajouter le systeme de point et retirer les prix. Fait
 -- Évaluer les services reçus et donner des retours d'expérience.
 
 
@@ -10,4 +10,8 @@
 Acceder au pages offer_service et find_service ni via les buttons ni via l'url
 Ne peux pas "acheter" d'offre ou "faire une demande" ou "proposer un service".
 
+- Afficher le message de suppression dans la page.
++ Un user ne peux pas acheter ca propre offre !
+++ Combination des fichier index2 et index1, Registration et register, purchase et post, login et connexion.
+-- Un user ne peux pas acheter plusieurs fois la meme offre. Fait
 

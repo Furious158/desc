@@ -14,7 +14,7 @@ try {
         SELECT posts.*, users.username, users.profile_picture 
         FROM posts 
         JOIN users ON posts.user_id = users.id 
-        WHERE posts.id = ?
+        WHERE posts.id = ? 
     ");
     $stmt->execute([$postId]);
     $post = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -22,9 +22,92 @@ try {
     if (!$post) {
         die("Post introuvable.");
     }
+
 } catch (PDOException $e) {
     die("Erreur lors de la récupération du post : " . $e->getMessage());
 }
+
+// Gestion de l'achat de l'offre
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    session_start(); // Démarrer la session pour accéder aux données utilisateur
+
+    // Vérifier si l'utilisateur est connecté
+    if (!isset($_SESSION['user_id'])) {
+        header('Location: Registration.php?redirect_to=' . urlencode("post.php?id={$postId}"));
+        exit;
+    }
+
+    $userId = $_SESSION['user_id']; // ID de l'utilisateur connecté
+    $sellerId = $post['user_id']; // ID du vendeur
+    $pointsRequis = intval($post['points_requis']); // Points requis pour acheter l'offre
+
+    // Empêcher un utilisateur d'acheter son propre post
+    if ($userId === $sellerId) {
+        $_SESSION['error_message'] = "Vous ne pouvez pas acheter votre propre offre."; // Message d'erreur
+        header("Location: post.php?id={$postId}");
+        exit;
+    }
+
+    // Vérifier si l'utilisateur a déjà acheté cette offre
+    $stmt = $pdo->prepare("SELECT * FROM transactions WHERE user_id = ? AND post_id = ?");
+    $stmt->execute([$userId, $postId]);
+    $existingTransaction = $stmt->fetch();
+
+    if ($existingTransaction) {
+        $_SESSION['error_message'] = "Vous avez déjà acheté cette offre."; // Message d'erreur
+        header("Location: post.php?id={$postId}");
+        exit;
+    }
+
+    // Récupérer le solde de l'utilisateur actuel
+    $stmt = $pdo->prepare("SELECT points FROM users WHERE id = ?");
+    $stmt->execute([$userId]);
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if (!$user) {
+        die("Utilisateur introuvable.");
+    }
+
+    $userPoints = intval($user['points']); // Points actuels de l'utilisateur
+
+    // Vérifier si l'utilisateur a assez de points
+    if ($userPoints < $pointsRequis) {
+        $_SESSION['error_message'] = "Vous n'avez pas assez de points pour acheter cette offre."; // Message d'erreur
+        header("Location: post.php?id={$postId}");
+        exit;
+    }
+
+    // Début de la transaction pour garantir l'intégrité des données
+    $pdo->beginTransaction();
+
+    try {
+        // Décrémenter les points de l'acheteur
+        $stmt = $pdo->prepare("UPDATE users SET points = points - ? WHERE id = ?");
+        $stmt->execute([$pointsRequis, $userId]);
+
+        // Incrémenter les points du vendeur
+        $stmt = $pdo->prepare("UPDATE users SET points = points + ? WHERE id = ?");
+        $stmt->execute([$pointsRequis, $sellerId]);
+
+        // Enregistrer l'achat dans la table transactions
+        $stmt = $pdo->prepare("INSERT INTO transactions (user_id, post_id) VALUES (?, ?)");
+        $stmt->execute([$userId, $postId]);
+
+        // Commit de la transaction
+        $pdo->commit();
+
+        $_SESSION['success_message'] = "Achat réussi ! Vous avez dépensé {$pointsRequis} points pour l'offre : <strong>" . htmlspecialchars($post['details']) . "</strong>";
+        header("Location: post.php?id={$postId}"); // Rediriger pour afficher le message de succès
+        exit;
+
+    } catch (PDOException $e) {
+        // En cas d'erreur, annuler la transaction
+        $pdo->rollBack();
+        die("Erreur lors de l'achat : " . $e->getMessage());
+    }
+}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -36,6 +119,7 @@ try {
     <link rel="stylesheet" href="stylesheet.css">
 </head>
 <body>
+
 <?php include 'header.php'; ?>
 
 <main>
@@ -46,17 +130,33 @@ try {
         </div>
         <div class="post-details">
             <p><strong>Type :</strong> <?php echo htmlspecialchars($post['type']); ?></p>
-            <p><strong>Catégorie :</strong> <?php echo htmlspecialchars($post['category']); ?></p>
             <p><strong>Détails :</strong> <?php echo htmlspecialchars($post['details']); ?></p>
+            <p><strong>Points requis:</strong> <?php echo htmlspecialchars($post['points_requis']); ?></p>
             <?php if ($post['disponibilites']): ?>
                 <p><strong>Disponibilités :</strong> <?php echo htmlspecialchars($post['disponibilites']); ?></p>
             <?php endif; ?>
-            <?php if ($post['prix_par_heure']): ?>
-                <p><strong>Prix par heure :</strong> <?php echo htmlspecialchars($post['prix_par_heure']); ?> €</p>
-            <?php endif; ?>
         </div>
         <p class="post-date">Publié le : <?php echo date("d/m/Y H:i", strtotime($post['created_at'])); ?></p>
-        <a href="purchase.php?post_id=<?php echo $post['id']; ?>" class="btn btn-purchase">Acheter cette offre</a>
+
+        <!-- Affichage des messages d'erreur ou de succès -->
+        <?php if (isset($_SESSION['error_message'])): ?>
+            <div class="alert alert-danger">
+                <?php echo htmlspecialchars($_SESSION['error_message']); ?>
+            </div>
+            <?php unset($_SESSION['error_message']); ?>
+        <?php endif; ?>
+
+        <?php if (isset($_SESSION['success_message'])): ?>
+            <div class="alert alert-success">
+                <?php echo htmlspecialchars($_SESSION['success_message']); ?>
+            </div>
+            <?php unset($_SESSION['success_message']); ?>
+        <?php endif; ?>
+
+        <!-- Formulaire d'achat -->
+        <form action="post.php?id=<?php echo $postId; ?>" method="POST">
+            <button type="submit" class="btn btn-purchase">Acheter cette offre</button>
+        </form>
     </section>
 </main>
 

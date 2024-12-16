@@ -38,8 +38,8 @@
             <input type="text" id="disponibilites" name="disponibilites" placeholder="Ex : Lundi au vendredi, 14h-18h" required>
         </div>
         <div class="form-group">
-            <label for="prix">Prix par heure (en €) :</label>
-            <input type="number" id="prix" name="prix_par_heure" min="0" step="0.01" placeholder="Ex : 15" required>
+            <label for="points_requis">Points requis :</label>
+            <input type="number" id="points_requis" name="points_requis" min="0" step="1.0" placeholder="Ex : 15" required>
         </div>
         <div class="form-group">
             <label for="details">Détails :</label>

@@ -66,19 +66,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['profile_picture'])) 
     <h1>Bienvenue sur votre compte</h1>
     <p>Username : <?php echo htmlspecialchars($user['username']); ?></p>
     <p>Email : <?php echo htmlspecialchars($user['email']); ?></p>
-    <p>Points :</p>
+    <p>Points : <?php echo htmlspecialchars($user['points']); ?></p> </p>
 
-    <!-- Afficher la photo de profil si disponible -->
-    <?php if (!empty($user['profile_picture'])): ?>
-        <img src="<?php echo htmlspecialchars($user['profile_picture']); ?>" alt="Photo de profil" style="width: 150px; height: 150px; border-radius: 50%;">
-    <?php else: ?>
-        <p>Pas de photo de profil</p>
-    <?php endif; ?>
+    <!-- Afficher la photo de profil, ou utiliser la photo par défaut -->
+    <img src="<?php echo !empty($user['profile_picture']) ? htmlspecialchars($user['profile_picture']) : 'uploads/profile_pictures/default-user.png'; ?>" alt="Photo de profil" style="width: 150px; height: 150px; border-radius: 50%;">
 
     <!-- Formulaire pour ajouter/modifier la photo de profil -->
     <form action="Account.php" method="POST" enctype="multipart/form-data">
         <label for="profile_picture">Changer votre photo de profil :</label>
-        <input type="file" name="profile_picture" id="profile_picture" accept=".jpg, .jpeg, .png, .gif" required>
+        <input type="file" name="profile_picture" id="profile_picture" accept=".jpg, .jpeg, .png, .gif">
         <button type="submit">Mettre à jour</button>
     </form>
 
