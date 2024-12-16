@@ -61,7 +61,7 @@ CREATE TABLE posts (
 
 ---
 
-Lancer l'application
+## Lancer l'application
 
 1. Placez les fichiers du projet dans le dossier `htdocs` de XAMPP.
    Exemple : `C:/xampp/htdocs/desc/`
@@ -70,8 +70,9 @@ Lancer l'application
 
 ---
 
-Fonctionnalités disponibles
-Utilisateurs (users)
+## Fonctionnalités disponibles
+
+### Utilisateurs (users)
 
 - Colonnes :
   - `username` : Nom d'utilisateur unique.
@@ -79,7 +80,7 @@ Utilisateurs (users)
   - `password` : Mot de passe haché.
   - `profile_picture` : (Facultatif) Photo de profil.
 
-Publications (posts)
+### Publications (posts)
 
 - Types :
 
@@ -94,14 +95,14 @@ Publications (posts)
 
 ---
 
-Notes supplémentaires
+## Notes supplémentaires
 
 - Port de MySQL : Si vous utilisez un autre port que 8080, modifiez l'URL appropriée.
 - Fichier `db.php` : Configurez les identifiants de connexion à votre base de données MySQL dans ce fichier.
 
 ---
 
-Ressources utiles
+## Ressources utiles
 
 - XAMPP - Documentation Officielle : https://www.apachefriends.org/faq.html
 - phpMyAdmin - Documentation : https://www.phpmyadmin.net/docs/
