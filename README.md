@@ -10,27 +10,59 @@ Créer une nouvelle base de donnée et l'appeler : desc_bdd.
 
 Créer une nouvelle table nommée users et ensuite aller dans la section SQL et entrer le code ci-dessous :
 
-CREATE TABLE users (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    username VARCHAR(50) NOT NULL UNIQUE,
-    email VARCHAR(100) NOT NULL UNIQUE,
-    password VARCHAR(255) NOT NULL,
-    profile_picture VARCHAR(255) DEFAULT NULL, -- Colonne pour la photo de profil
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+CREATE TABLE `users` (
+
+  `id` int(11) NOT NULL,
+
+  `username` varchar(50) NOT NULL,
+
+  `email` varchar(100) NOT NULL,
+
+  `password` varchar(255) NOT NULL,
+
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+
+  `profile_picture` varchar(255) DEFAULT 'default.jpg',
+
+  `points` int(11) NOT NULL DEFAULT 0
+
 );
+
 
 En créer une autre nommée posts et entrer le code ci-dessous : 
 
-CREATE TABLE posts (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    user_id INT NOT NULL,
-    type ENUM('demande', 'offre') NOT NULL,
-    category VARCHAR(255) NOT NULL,
-    details TEXT NOT NULL,
-    disponibilites TEXT,
-    prix_par_heure DECIMAL(10, 2),
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+CREATE TABLE `posts` (
+
+  `id` int(11) NOT NULL,
+
+  `user_id` int(11) NOT NULL,
+
+  `type` enum('demande','offre') NOT NULL,
+
+  `category` varchar(100) NOT NULL,
+
+  `details` text NOT NULL,
+
+  `disponibilites` varchar(255) DEFAULT NULL,
+
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+
+  `points_requis` int(11) NOT NULL DEFAULT 0
+
 );
+
+En créer une autre nommée transactions et entrer le code ci-dessous : 
+
+CREATE TABLE `transactions` (
+
+  `id` int(11) NOT NULL,
+
+  `user_id` int(11) NOT NULL,
+
+  `post_id` int(11) NOT NULL,
+
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+  
+) 
 
 Rendez-vous sur http://localhost:8080/desc/index.php.
