@@ -67,7 +67,7 @@
 
 <?php
 require 'db.php';
-session_start();
+
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = htmlspecialchars($_POST['email']); // Récupérer l'email
