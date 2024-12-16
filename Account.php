@@ -1,4 +1,4 @@
-<?php include 'includes/header.php'; ?>
+<?php include 'header.php'; ?>
 <?php
 // Vérifiez si l'utilisateur est connecté
 if (!isset($_SESSION['user_id'])) {
@@ -56,38 +56,34 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['profile_picture'])) 
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Compte</title>
 </head>
-
 <body>
-    <main class="account-container">
-        <h1>Bienvenue sur votre compte</h1>
-        <p>Username : <?php echo htmlspecialchars($user['username']); ?></p>
-        <p>Email : <?php echo htmlspecialchars($user['email']); ?></p>
-        <p>Points :</p>
+<main class="account-container">
+    <h1>Bienvenue sur votre compte</h1>
+    <p>Username : <?php echo htmlspecialchars($user['username']); ?></p>
+    <p>Email : <?php echo htmlspecialchars($user['email']); ?></p>
+    <p>Points :</p>
 
-        <!-- Afficher la photo de profil si disponible -->
-        <?php if (!empty($user['profile_picture'])): ?>
-            <img src="<?php echo htmlspecialchars($user['profile_picture']); ?>" alt="Photo de profil"
-                style="width: 150px; height: 150px; border-radius: 50%;">
-        <?php else: ?>
-            <p>Pas de photo de profil</p>
-        <?php endif; ?>
+    <!-- Afficher la photo de profil si disponible -->
+    <?php if (!empty($user['profile_picture'])): ?>
+        <img src="<?php echo htmlspecialchars($user['profile_picture']); ?>" alt="Photo de profil" style="width: 150px; height: 150px; border-radius: 50%;">
+    <?php else: ?>
+        <p>Pas de photo de profil</p>
+    <?php endif; ?>
 
-        <!-- Formulaire pour ajouter/modifier la photo de profil -->
-        <form action="Account.php" method="POST" enctype="multipart/form-data">
-            <label for="profile_picture">Changer votre photo de profil :</label>
-            <input type="file" name="profile_picture" id="profile_picture" accept=".jpg, .jpeg, .png, .gif" required>
-            <button type="submit">Mettre à jour</button>
-        </form>
+    <!-- Formulaire pour ajouter/modifier la photo de profil -->
+    <form action="Account.php" method="POST" enctype="multipart/form-data">
+        <label for="profile_picture">Changer votre photo de profil :</label>
+        <input type="file" name="profile_picture" id="profile_picture" accept=".jpg, .jpeg, .png, .gif" required>
+        <button type="submit">Mettre à jour</button>
+    </form>
 
-        <a href="logout.php">Déconnexion</a>
-    </main>
-    <?php include 'includes/footer.php'; ?>
+    <a href="logout.php">Déconnexion</a>
+</main>
+<?php include 'footer.php'; ?>
 </body>
-
 </html>
