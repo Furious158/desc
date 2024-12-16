@@ -22,3 +22,63 @@ a:hover {
     margin: 0 auto;
     padding: 20px;
 }
+
+/* Responsive Design */
+
+/* Tablettes */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    header p {
+        font-size: 1em;
+    }
+
+    .actions .buttons {
+        flex-direction: column; /* Empile les boutons verticalement */
+    }
+
+    .post-list {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Réduction de la taille minimale */
+    }
+
+    .profile {
+        flex-direction: column; /* Les éléments de profil passent en colonne */
+        text-align: center;
+    }
+
+    .profile .profile-actions {
+        text-align: center;
+    }
+}
+
+/* Smartphones */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    header p {
+        font-size: 0.9em;
+    }
+
+    .introduction h2,
+    .actions h2,
+    .posts h2 {
+        font-size: 1.5em;
+    }
+
+    .profile .profile-info h3 {
+        font-size: 1.5em;
+    }
+
+    .profile .profile-actions button {
+        font-size: 0.9em;
+        padding: 8px 12px;
+    }
+
+    .post-list {
+        grid-template-columns: 1fr; /* Une seule colonne */
+    }
+}
